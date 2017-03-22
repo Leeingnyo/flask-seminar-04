@@ -1,0 +1,28 @@
+.layout-clamped {
+  max-width: 940px;
+  margin: 0px auto;
+}
+
+#top-header {
+  width: 100%;
+  background-color: #8dc63f;
+}
+#top-header h1 {
+  box-sizing: border-box;
+  padding: 50px 20px 30px;
+  font-size: 3em;
+  color: white;
+}
+
+#lower {
+  display: flex;
+}
+
+#main {
+  flex: 4;
+}
+
+#side-bar {
+  flex: 1;
+  max-width: 240px;
+}

@@ -3,4 +3,4 @@ from blog import app
 
 @app.route('/', methods=['GET'])
 def index():
-    return 'index'
+    return render_template('index.html')
