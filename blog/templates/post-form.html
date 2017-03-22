@@ -2,13 +2,13 @@
   <div>
     <label>
       <span class="label-title">Title: </span>
-      <input name="title">
+      <input name="title" value="{{ post_for_edit.title }}">
     </label>
   </div>
   <div>
     <label>
       <span class="label-content">Content: </span>
-      <textarea name="content"></textarea>
+      <textarea name="content">{{ post_for_edit.content }}</textarea>
     </label>
   </div>
   <div>

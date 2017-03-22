@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block main %}
-{% set post_form_action_location = url_for('create_post') %}
+{% set post_form_action_location = url_for('update_post', post_id=post.id) %}
 {% set post_form_method_type = 'post' %}
-{% set post_for_edit = None %}
+{% set post_for_edit = post %}
 {% include 'post-form.html' with context %}
 {% endblock %}

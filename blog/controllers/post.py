@@ -46,14 +46,14 @@ def read_post(post_id):
 def edit_post(post_id):
     try :
         post = dao.query(Post).filter_by(id=post_id).one()
-        return post
+        return render_template('post-edit.html', post=post)
         # render post edit page
     except NoResultFound:
         abort(404);
     except MultipleResultsFound:
         abort(404);
 
-@app.route('/posts/<int:post_id>', methods=['PUT'])
+@app.route('/posts/<int:post_id>', methods=['POST'])
 def update_post(post_id):
     try :
         post = dao.query(Post).filter_by(id=post_id).one()
