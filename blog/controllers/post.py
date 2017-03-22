@@ -70,7 +70,7 @@ def update_post(post_id):
     except:
         return redirect(url_for('index'))
 
-@app.route('/posts/<int:post_id>', methods=['DELETE'])
+@app.route('/posts/<int:post_id>/delete', methods=['POST'])
 def delete_post(post_id):
     try :
         post = dao.query(Post).filter_by(id=post_id).one()
@@ -101,7 +101,7 @@ def create_comment(post_id):
     except:
         pass
 
-@app.route('/posts/<int:post_id>/comments/<int:comment_id>', methods=['DELETE'])
+@app.route('/posts/<int:post_id>/comments/<int:comment_id>/delete', methods=['POST'])
 def delete_comment(post_id, comment_id):
     try:
         comment = Comment.query.filter_by(id=comment_id).one()
