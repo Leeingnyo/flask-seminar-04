@@ -14,5 +14,7 @@ def init_db():
     # import all modules here that might define models so that
     # they will be registered properly on the metadata.  Otherwise
     # you will have to import them first before calling init_db()
-    import blog.models
+    from blog.models import post
+    # 한줄로 하고 싶은데 아쉽다
+    # from blog.models import * 가 안돼서 못 함
     Base.metadata.create_all(bind=engine)
