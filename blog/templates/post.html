@@ -21,5 +21,21 @@
     <button>삭제</button>
   </form>
 </section>
+<section class="comments">
+  <h3>댓글</h3>
+  {% set parent_post = post %}
+  {% include 'comment-form.html' %}
+  <ul>
+  {% for comment in post.comments %}
+    <li class="comment-item">
+      <span class="comment-name">{{ comment.name }}</span>
+      <div class="comment-content">{{ comment.content }}</div>
+      <form action="{{ url_for('delete_comment', post_id=post.id, comment_id=comment.id) }}" method="POST" onsubmit="return confirm('삭제하시겠습니까?')">
+        <button>삭제</button>
+      </form>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
 <a href="{{ url_for('index_post') }}">돌아가기</a>
 {% endblock %}

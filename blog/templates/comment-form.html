@@ -1,0 +1,17 @@
+<form action="{{ url_for('create_comment', post_id=parent_post.id) }}" method="POST">
+  <div>
+    <label>
+      <span class="label-name">Name: </span>
+      <input name="name">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span class="label-content">Content: </span>
+      <textarea name="content"></textarea>
+    </label>
+  </div>
+  <div>
+    <button>제출</button>
+  </div>
+</form>
