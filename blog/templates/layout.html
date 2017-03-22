@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>{% block title %}시지온 플라스크 세미나 04{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+  {% block stylesheets %}
+  {% endblock %}
+</head>
+<body>
+  <header id="top-header">
+    <div class="layout-clamped">
+      <h1>블로그</h1>
+    </div>
+  </header>
+  <div id="lower" class="layout-clamped">
+    <main id="main">
+      {% block main %}
+      {% endblock %}
+    </main>
+    <aside id="side-bar">
+      사이드바
+      {% block sidebar %}
+      {% endblock %}
+    </aside>
+  </div>
+</body>
+
