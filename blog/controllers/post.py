@@ -10,7 +10,7 @@ from blog.models.comment import Comment
 
 @app.route('/posts', methods=['GET'])
 def index_post():
-    return '글 페이지'
+    return render_template('post-index.html')
     # render post index page
 
 @app.route('/posts', methods=['POST'])
