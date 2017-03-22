@@ -1,5 +1,11 @@
 {% extends 'layout.html' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='post-form.css') }}">
+{% endblock %}
+
 {% block main %}
-글 폼 넣기
+{% set post_form_action_location = url_for('create_post') %}
+{% set post_form_method_type = 'post' %}
+{% include 'post-form.html' with context %}
 {% endblock %}

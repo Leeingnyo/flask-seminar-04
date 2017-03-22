@@ -1,0 +1,30 @@
+.post-form {
+  margin: 10px;
+  padding: 10px;
+}
+
+.post-form > div {
+  margin-bottom: 10px;
+}
+
+.post-form .label-title {
+  display: inline-block;
+  width: 50px;
+}
+
+.post-form textarea {
+  display: block;
+  margin: 10px;
+  min-width: 400px;
+  min-height: 150px;
+}
+
+.post-form button {
+  margin: 10px;
+  width: 120px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 0px;
+  background: #8dc63f;
+  color: white;
+}
