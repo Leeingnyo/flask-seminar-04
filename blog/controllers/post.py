@@ -28,7 +28,7 @@ def create_post():
 
 @app.route('/posts/new', methods=['GET'])
 def new_post():
-    return '글쓰기 페이지'
+    return render_template('post-new.html')
 
 @app.route('/posts/<int:post_id>', methods=['GET'])
 def read_post(post_id):
