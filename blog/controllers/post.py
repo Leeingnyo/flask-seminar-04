@@ -38,7 +38,7 @@ def read_post(post_id):
     try:
         post = dao.query(Post).filter_by(id=post_id).one()
         # 이런 걸 모아서 util을 만들어도...
-        return render_template('post.html', post=post)
+        return render_template('post-read.html', post=post)
         # render post page
     except NoResultFound:
         abort(404);

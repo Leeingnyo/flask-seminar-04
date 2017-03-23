@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='post.css') }}">
+{% endblock %}
+
+{% block main %}
+{% include 'post.html' %}
+<a href="{{ url_for('index_post') }}">돌아가기</a>
+{% endblock %}
+
