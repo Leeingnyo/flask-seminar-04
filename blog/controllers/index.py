@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from flask import render_template, request, redirect, url_for
 
 from blog import app
@@ -21,3 +23,34 @@ def sidebar_processor():
         comments = dao.query(Comment).order_by(Comment.created_at.desc()).all()[:5]
         return comments
     return dict(recent_posts=recent_posts(), recent_comments=recent_comments())
+
+# http://jinja.pocoo.org/docs/2.9/templates/#filters
+# http://jinja.pocoo.org/docs/2.9/api/#custom-filters
+# http://flask.pocoo.org/docs/0.12/templating/#registering-filters
+
+# this from http://flask.pocoo.org/snippets/33/
+@app.template_filter('rel_dateformat')
+def timesince(dt, default="just now"):
+    """
+    Returns string representing "time since" e.g.
+    3 days ago, 5 hours ago etc.
+    """
+
+    now = datetime.utcnow()
+    diff = now - dt
+
+    periods = (
+        (diff.days / 365, "년"),
+        (diff.days / 30, "개월"),
+        (diff.days / 7, "주"),
+        (diff.days, "일"),
+        (diff.seconds / 3600, "시간"),
+        (diff.seconds / 60, "분"),
+        (diff.seconds, "초"),
+    )
+
+    for period, unit in periods:
+        if period >= 1:
+            return "%d%s 전" % (period, unit)
+
+    return default
