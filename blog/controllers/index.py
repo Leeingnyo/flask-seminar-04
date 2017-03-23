@@ -38,7 +38,7 @@ def timesince(dt, default="방금 전"):
     3 days ago, 5 hours ago etc.
     """
 
-    now = datetime.utcnow()
+    now = datetime.now()
     diff = now - dt
 
     periods = (
