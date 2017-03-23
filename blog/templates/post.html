@@ -15,13 +15,13 @@
   {{ post.content }}
   </p>
 </article>
-<section class="post-control-box">
+<section class="control-box post-control-box">
   <a href="{{ url_for('edit_post', post_id=post.id) }}">수정</a>
   <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" onsubmit="return confirm('삭제하시겠습니까?')">
     <button>삭제</button>
   </form>
 </section>
-<section class="comments">
+<section class="comment-box">
   <h3>댓글</h3>
   {% set parent_post = post %}
   {% include 'comment-form.html' %}
@@ -30,9 +30,11 @@
     <li class="comment-item">
       <span class="comment-name">{{ comment.name }}</span>
       <div class="comment-content">{{ comment.content }}</div>
-      <form action="{{ url_for('delete_comment', post_id=post.id, comment_id=comment.id) }}" method="POST" onsubmit="return confirm('삭제하시겠습니까?')">
-        <button>삭제</button>
-      </form>
+      <section class="control-box comment-control-box">
+        <form action="{{ url_for('delete_comment', post_id=post.id, comment_id=comment.id) }}" method="POST" onsubmit="return confirm('삭제하시겠습니까?')">
+          <button>삭제</button>
+        </form>
+      </section>
     </li>
   {% endfor %}
   </ul>

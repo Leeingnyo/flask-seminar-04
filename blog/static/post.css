@@ -1,6 +1,8 @@
 .post-box {
-  margin: 10px;
+  margin: 5px;
+  box-sizing: border-box;
   padding: 10px;
+  border: 1px solid black;
 }
 
 .post-box h2 {
@@ -10,5 +12,84 @@
 }
 
 .post-box p {
+  white-space: pre-line;
+}
+
+.control-box {
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid black;
+}
+.control-box form {
+  display: inline;
+}
+.control-box a, .control-box form button {
+  margin: 2px 4px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #ef4545;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.comment-box {
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid black;
+}
+.comment-box h3 {
+  margin: 5px;
+  font-size: 1.5em;
+}
+
+.comment-form {
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid black;
+}
+.comment-form > div {
+  margin-bottom: 10px;
+}
+.comment-form > div:last-child {
+  margin-bottom: 0px;
+}
+.comment-form .label-title {
+  display: inline-block;
+  width: 50px;
+}
+.comment-form textarea {
+  display: block;
+  margin: 10px;
+  min-width: 400px;
+  min-height: 50px;
+}
+.comment-form button {
+  width: 120px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 0px;
+  background: #8dc63f;
+  color: white;
+}
+
+.comment-item {
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid black;
+}
+.comment-item span {
+  margin: 3px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.comment-item div {
+  margin: 3px;
   white-space: pre-line;
 }
