@@ -96,7 +96,7 @@ def create_comment(post_id):
         new_comment = Comment(name, created_at, content, post_id, ip=ip)
         dao.add(new_comment)
         dao.commit()
-        return redirect(url_for('read_post', post_id=post_id))
+        return redirect(request.referrer or url_for('read_post', post_id=post_id))
     except NoResultFound:
         abort(404);
     except MultipleResultsFound:
