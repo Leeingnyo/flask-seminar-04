@@ -11,7 +11,7 @@
   </form>
 </section>
 <section class="comment-box">
-  <h3>댓글</h3>
+  <h3>댓글 ({{ post.comments|length }})</h3>
   {% set parent_post = post %}
   {% include 'comment-form.html' %}
   <ul>
