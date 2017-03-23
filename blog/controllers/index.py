@@ -10,3 +10,14 @@ def index():
     posts = dao.query(Post).order_by(Post.created_at.desc()).all()[:3]
     # cause N+1 query
     return render_template('index.html', posts=posts)
+
+# http://flask.pocoo.org/docs/0.12/templating/#context-processors
+@app.context_processor
+def sidebar_processor():
+    def recent_posts():
+        posts = dao.query(Post).order_by(Post.created_at.desc()).all()[:5]
+        return posts
+    def recent_comments():
+        comments = dao.query(Comment).order_by(Comment.created_at.desc()).all()[:5]
+        return comments
+    return dict(recent_posts=recent_posts(), recent_comments=recent_comments())
