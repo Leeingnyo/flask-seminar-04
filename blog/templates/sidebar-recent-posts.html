@@ -4,7 +4,7 @@
   {% for post in recent_posts %}
     <li class="recent-post-item">
       <a href="{{ url_for('read_post', post_id=post.id) }}">{{ post.title }}</a>
-      {{ post.created_at }}
+      {{ post.created_at|rel_dateformat }}
     </li>
   {% endfor %}
   </ul>

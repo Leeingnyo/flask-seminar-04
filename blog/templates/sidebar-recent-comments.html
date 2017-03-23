@@ -6,7 +6,7 @@
       {{ comment.content }}
       by {{ comment.name }}
       at <a href="{{ url_for('read_post', post_id=comment.post.id) }}">{{ comment.post.title }}</a>
-      {{ comment.created_at }}
+      {{ comment.created_at|rel_dateformat }}
     </li>
   {% endfor %}
   </ul>
