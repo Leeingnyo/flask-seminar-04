@@ -1,0 +1,11 @@
+<section class="widget recent-posts-widget">
+  <h3>최근 글</h3>
+  <ul class="recent-post-list">
+  {% for post in recent_posts %}
+    <li class="recent-post-item">
+      <a href="{{ url_for('read_post', post_id=post.id) }}">{{ post.title }}</a>
+      {{ post.created_at }}
+    </li>
+  {% endfor %}
+  </ul>
+</section>

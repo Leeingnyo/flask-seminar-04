@@ -20,7 +20,8 @@
       {% endblock %}
     </main>
     <aside id="side-bar">
-      사이드바
+      {% include 'sidebar-recent-posts.html' %}
+      {% include 'sidebar-recent-comments.html' %}
       {% block sidebar %}
       {% endblock %}
     </aside>

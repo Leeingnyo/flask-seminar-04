@@ -1,0 +1,13 @@
+<section class="widget recent-posts-widget">
+  <h3>최근 댓글</h3>
+  <ul class="recent-comment-list">
+  {% for comment in recent_comments %}
+    <li class="recent-comment-item">
+      {{ comment.content }}
+      by {{ comment.name }}
+      at <a href="{{ url_for('read_post', post_id=comment.post.id) }}">{{ comment.post.title }}</a>
+      {{ comment.created_at }}
+    </li>
+  {% endfor %}
+  </ul>
+</section>
