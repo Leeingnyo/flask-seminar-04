@@ -6,8 +6,6 @@
 {% endblock %}
 
 {% block main %}
-<a class="write-button" href="{{ url_for('new_post') }}">글 쓰기</a>
-<a class="write-button" href="{{ url_for('index_post') }}">글 목록</a>
 <ul class="post-list">
   <h2 class="post-list-title">글 목록</h2>
 {% for post in posts %}
