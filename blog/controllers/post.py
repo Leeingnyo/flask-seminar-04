@@ -10,7 +10,10 @@ from blog.models.comment import Comment
 
 @app.route('/posts', methods=['GET'])
 def index_post():
-    return render_template('post-index.html')
+    page = request.args.get('page', 0)
+    page_length = 10
+    posts = dao.query(Post).all()[(page * page_length):((page + 1) * page_length)]
+    return render_template('post-index.html', posts=posts)
     # render post index page
 
 @app.route('/posts', methods=['POST'])

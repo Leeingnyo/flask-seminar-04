@@ -26,13 +26,14 @@
 }
 .control-box a, .control-box form button {
   margin: 2px 4px;
-  padding: 0px;
+  box-sizing: border-box;
+  padding: 5px;
   border: none;
   outline: none;
-  background: none;
-  color: #ef4545;
+  background: #8dc63f;
+  color: white;
   font-size: 12px;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 

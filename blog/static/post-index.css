@@ -1,0 +1,28 @@
+.write-button {
+  display: block;
+  margin: 10px;
+  width: 120px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 0px;
+  background: #8dc63f;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.post-list-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.post-list {
+  margin: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.post-item {
+  margin: 1em 0px;
+}
+.post-item span {
+  font-size: 1.2em;
+}

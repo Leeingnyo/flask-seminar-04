@@ -1,5 +1,23 @@
 {% extends 'layout.html' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='post-index.css') }}"
+{% endblock %}
+
 {% block main %}
-<a href="{{ url_for('new_post') }}">글 쓰기</a>
+<a class="write-button" href="{{ url_for('new_post') }}">글 쓰기</a>
+<ul class="post-list">
+  <h2 class="post-list-title">글 목록</h2>
+{% for post in posts %}
+  <li class="post-item">
+    <span>
+      {{ loop.index }}.
+      {# http://stackoverflow.com/questions/17739264/count-number-of-rows-in-flask-templates #}
+      <a href="{{ url_for('read_post', post_id=post.id) }}">
+        {{ post.title }}
+      </a>
+    </span>
+  </li>
+{% endfor %}
+</ul>
 {% endblock %}
