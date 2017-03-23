@@ -32,7 +32,7 @@ def sidebar_processor():
 
 # this from http://flask.pocoo.org/snippets/33/
 @app.template_filter('rel_dateformat')
-def timesince(dt, default="just now"):
+def timesince(dt, default="방금 전"):
     """
     Returns string representing "time since" e.g.
     3 days ago, 5 hours ago etc.
