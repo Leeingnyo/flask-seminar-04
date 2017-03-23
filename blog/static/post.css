@@ -18,8 +18,7 @@
 .control-box {
   margin: 5px;
   box-sizing: border-box;
-  padding: 5px;
-  border: 1px solid black;
+  text-align: right;
 }
 .control-box form {
   display: inline;
@@ -52,7 +51,6 @@
   margin: 5px;
   box-sizing: border-box;
   padding: 10px;
-  border: 1px solid black;
 }
 .comment-form > div {
   margin-bottom: 10px;
@@ -83,7 +81,10 @@
   margin: 5px;
   box-sizing: border-box;
   padding: 5px;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.comment-item:last-child {
+  border-bottom: none;
 }
 .comment-item span {
   margin: 3px;
