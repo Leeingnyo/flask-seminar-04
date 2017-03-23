@@ -17,6 +17,9 @@
         {{ post.title }}
       </a>
     </span>
+    <div>
+      {{ post.content|truncate }}
+    </div>
   </li>
 {% endfor %}
 </ul>

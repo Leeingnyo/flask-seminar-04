@@ -12,6 +12,7 @@
 </section>
 <section class="comment-box">
   <h3>댓글 ({{ post.comments|length }})</h3>
+  {# http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters #}
   {% set parent_post = post %}
   {% include 'comment-form.html' %}
   <ul>

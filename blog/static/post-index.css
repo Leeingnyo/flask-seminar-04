@@ -26,3 +26,6 @@
 .post-item span {
   font-size: 1.2em;
 }
+.post-item div {
+  margin: 10px 5px;
+}
